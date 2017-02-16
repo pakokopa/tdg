@@ -1,0 +1,41 @@
+{
+  "name": "tdg",
+  "version": "1.0.0",
+  "description": "webapp to generate test data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pako",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "browser-sync": "^2.18.6",
+    "browserify-shim": "^3.8.12",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cleanhtml": "^1.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-jslint": "^1.0.10",
+    "gulp-less": "^3.3.0",
+    "gulp-minify": "0.0.14",
+    "gulp-mocha-phantomjs": "^0.12.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "jquery": "^3.1.1",
+    "jshint": "^2.9.4"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}

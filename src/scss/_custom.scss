@@ -1,0 +1,26 @@
+.navbar{
+  margin-bottom:0;
+
+  .fa{
+    font-size:18px;
+  }
+}
+
+.showcase{
+
+    h1{
+        color: $main-text-color;
+        font-size: 45px;
+    }
+}
+
+.overview{
+    table{
+        border: 1px solid $ter-element-color;
+
+        thead{
+            color: $sec-text-color;
+            background-color: $main-color;
+        }
+    }
+}
