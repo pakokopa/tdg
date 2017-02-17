@@ -7,19 +7,20 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## own variables
 
-$main-color:             #8BC34A !default;
-$sec-color:              #689F38 !default;
-$ter-color:              #DCEDC8 !default;
-$main-element-color:     #FFFFFF !default;
-$sec-element-color:      #212121 !default;
-$ter-element-color:      #BDBDBD !default;
+$main-color:             #E20074 !default;                            //#E20074 //#8BC34A
+$sec-color:              darken($main-color, 5%) !default;           //5% oder 15%
+$ter-color:              #D0D0D0 !default;                           //#D0D0D0 //lighten($main-color, 25%)
+$main-element-color:     lighten($main-color, 100%) !default;
+$sec-element-color:      darken($main-color, 100%) !default;
+$ter-element-color:      #D0D0D0 !default;                           //#D0D0D0 //lighten($sec-element-color, 50%)
 
-$main-header-color:      #689F38 !default;
-$sec-header-color:       #8BC34A !default;
-$main-text-color:        #212121 !default;
-$sec-text-color:         #FFFFFF !default;
-$ter-text-color:         #BDBDBD !default;
+$main-header-color:      $sec-color !default;
+$sec-header-color:       $main-color !default;
+$main-text-color:        $sec-element-color !default;
+$sec-text-color:         $main-element-color!default;
+$ter-text-color:         $ter-element-color !default;
 
+$icon-size:              60px;
 
 //== Colors
 //
@@ -32,7 +33,7 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-primary:         $main-color !default;                                //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
