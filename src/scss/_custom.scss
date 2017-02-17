@@ -14,7 +14,7 @@
     }
 }
 
-.overview{
+.overview-table{
     table{
         border: 1px solid $ter-element-color;
 
@@ -22,5 +22,11 @@
             color: $sec-text-color;
             background-color: $main-color;
         }
+    }
+}
+
+.section-b{
+    .panel-heading h4{
+        color: $sec-text-color;
     }
 }
