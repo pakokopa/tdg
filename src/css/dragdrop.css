@@ -1,0 +1,153 @@
+.draggable {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  width: 314px;
+  height: 134px;
+  padding: 20px;
+  z-index: 10;
+}
+
+#container > .draggable {
+  top: 20px;
+  left: 20px;
+}
+
+.draggable:hover {
+  cursor: move;
+}
+
+.draggable p,
+.droppable p {
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #fff;
+  font-size: 68px;
+  margin: 20px 0 25px 6px;
+  
+  text-shadow: -1px -1px 1px #000;
+}
+
+.droppable p {
+  font-size: 55px;
+  margin: 30px 0 25px 10px;
+}
+
+.droppable {
+  width: 318px;
+  height: 138px;
+  padding: 20px;
+  z-index: 0;
+}
+
+.droppable.hovered {
+  background: rgba(0,0,0,0.5);  
+}
+
+.dropfield01 {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+}
+
+.dropfield02 {
+  position: absolute;
+  top: 140px;
+  left: 440px;
+}
+
+.stack1,
+.stack2,
+.stack3 {
+  width: 254px;
+}
+
+.stack1{
+  top:140px;
+  left:40px;
+}
+
+.stack2{
+  top:200px;
+  left:100px;
+}
+
+.stack3{
+  top:260px;
+  left:160px;
+}
+
+#sortable {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  list-style: none;
+}
+
+#sortable li {
+  width: 314px;
+  height: 19px;
+  padding: 15px 20px 20px 20px;
+  margin-bottom: 20px;
+  z-index: 10;
+  
+
+}
+
+
+#sortable li p{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+#list_module li {
+  width: 314px;
+  height: 19px;
+  padding: 15px 20px 20px 20px;
+  margin-bottom: 20px;
+  z-index: 10;
+
+
+}
+
+#list_module li:hover {
+  cursor:move;
+}
+
+#list_module li p{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+li.ui-draggable-dragging {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#list_testdata {
+  top: 140px;
+  left: 440px;
+  width: 394px;
+}
+
+
+
+#list_testdata .list_testdata_content {
+  min-height: 100px;
+}
+
+#list_testdata ol {
+  margin: 0 0 10px 40px;
+  min-height: 100px;
+  color: #000;
+}
+
+
+#trash p {
+  padding: 5px 0 5px 20px;
+  color: #000;
+  font-size: 12px;
+}
+

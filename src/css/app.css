@@ -4666,7 +4666,7 @@ output {
   font-size: 14px;
   line-height: 1.42857;
   color: #555555;
-  background-color: #fff;
+  background-color: white;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -4676,10 +4676,10 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-control:focus {
-    border-color: #66afe9;
+    border-color: #aaaaaa;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(170, 170, 170, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(170, 170, 170, 0.6); }
   .form-control::-moz-placeholder {
     color: #999;
     opacity: 1; }
@@ -8188,6 +8188,8 @@ button.close {
 
 .showcase {
   margin-top: 70px; }
+  .showcase textarea {
+    resize: none; }
   .showcase h1 {
     color: black;
     font-family: TeleFont-Medium;
@@ -8246,7 +8248,7 @@ button.close {
 .btn {
   background-color: #E20074;
   border: none;
-  color: #FFF;
+  color: white;
   padding: 12px 28px;
   text-align: center;
   text-decoration: none;
@@ -8262,3 +8264,6 @@ footer {
   -webkit-box-shadow: 3px 1px 6px #a0a0a0;
   -khtml-box-shadow: 3px 1px 6px #a0a0a0;
   box-shadow: 3px 1px 6px #a0a0a0; }
+
+.tab-content h3 {
+  color: #E20074; }
