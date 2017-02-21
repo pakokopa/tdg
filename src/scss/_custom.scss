@@ -17,7 +17,7 @@
     }
 }
 .showcase {
-    margin-top: 70px;
+    //margin-top: 70px;
     textarea {
         resize: none;
     }
@@ -112,4 +112,9 @@ footer {
     h3 {
         color: $main-color;
     }
+}
+
+#btn_testdata{
+    margin-top: 70px;
+    margin-bottom: 20px;
 }

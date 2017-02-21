@@ -1,0 +1,107 @@
+@import "customVariables";
+
+#list_module {
+  list-style: none;
+}
+
+#list_module li {
+
+    background-color: $main-color;
+    border: none;
+    color: $sec-text-color;
+    padding: 12px 28px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+
+    font-family: TeleFont-Medium;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#list_module li:hover {
+  cursor:move;
+}
+
+.list_testdata_content {
+
+margin-top: 20px;
+  border: 1px solid darken($ter-color, 15%);
+  background-color: $ter-color;
+
+  -o-border-radius: $border-radius-base;
+  -moz-border-radius: $border-radius-base;
+  -webkit-border-radius: $border-radius-base;
+  border-radius: $border-radius-base;
+}
+
+#list_testdata .list_testdata_content {
+  min-height: 300px;
+
+}
+
+#list_testdata ol {
+  min-height: 250px;
+  color: #000;
+  list-style: none;
+}
+
+#trash {
+  text-align: center;
+  background-color: darken($ter-color, 20%);
+  border: 1px solid darken($ter-color, 29%);
+  -o-border-radius: $border-radius-base $border-radius-base $border-radius-base $border-radius-base;
+  -moz-border-radius: $border-radius-base $border-radius-base $border-radius-base $border-radius-base;
+  -webkit-border-radius: $border-radius-base $border-radius-base $border-radius-base $border-radius-base;
+  border-radius: $border-radius-base $border-radius-base $border-radius-base $border-radius-base;
+}
+
+#trash.hovered {
+    -o-box-shadow: 0px 0px 10px darken($ter-color, 35%);
+     -moz-box-shadow: 0px 0px 10px darken($ter-color, 35%);
+     -webkit-box-shadow: 0px 0px 10px darken($ter-color, 35%);
+     box-shadow: 0px 0px 10px darken($ter-color, 35%);
+}
+
+#trash p {
+  padding: 20px 20px 20px 20px;
+  color: $sec-text-color;
+ }
+
+.ui-draggable-dragging {
+    background-color: $main-color;
+    border: none;
+    color: $sec-text-color;
+    padding: 12px 28px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+
+    font-family: TeleFont-Medium;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.list_testdata_content li{
+     background-color: $main-color;
+     border: none;
+     color: $sec-text-color;
+     padding: 12px 28px;
+     width: 150px;
+     height: 50px;
+     text-align: center;
+     text-decoration: none;
+     list-style: none;
+
+     font-family: TeleFont-Medium;
+     font-size: 18px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+ }
+
+/*¯\_(ツ)_/¯*/

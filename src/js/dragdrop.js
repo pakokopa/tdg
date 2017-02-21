@@ -19,6 +19,7 @@ $(function() {
         drop: function(event, ui) {
             $(this).find(".placeholder").remove();
             $("<li></li>").text(ui.draggable.text()).appendTo(this);
+            //$("<input type="text" name="test">").appendTo(this);
         }
     }).sortable({
         items: "li:not(.placeholder)",
@@ -27,6 +28,8 @@ $(function() {
             $("ul, li").disableSelection();
         }
     });
+
+
     // Löschen der Module
     $("#trash").droppable({
         accept: "#list_testdata li",

@@ -20,6 +20,7 @@ $main-text-color:        $sec-element-color !default;
 $sec-text-color:         $main-element-color!default;
 $ter-text-color:         $ter-element-color !default;
 
+$border-radius-base:     2px !default;
 $icon-size:              60px;
 
 //== Colors
@@ -125,7 +126,7 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        4px !default;
+
 $border-radius-large:       6px !default;
 $border-radius-small:       3px !default;
 
