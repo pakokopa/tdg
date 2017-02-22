@@ -37,9 +37,17 @@ margin-top: 20px;
   border-radius: $border-radius-base;
 }
 
-#list_testdata .list_testdata_content {
+
+
+#list_testdata {
+
+ width: 540px;
+
+.list_testdata_content {
   min-height: 300px;
 
+
+}
 }
 
 #list_testdata ol {
@@ -102,6 +110,21 @@ margin-top: 20px;
      font-size: 18px;
      margin-bottom: 20px;
      margin-top: 20px;
+ }
+
+ .list_testdata_div{
+
+            display: inline-block;
+
+     input{
+         float:right;
+         margin-top: 30px;
+         margin-left: 10px;
+     }
+
+     li{
+         float:left;
+     }
  }
 
 /*¯\_(ツ)_/¯*/

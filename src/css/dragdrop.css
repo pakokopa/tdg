@@ -28,8 +28,10 @@
   -webkit-border-radius: 2px;
   border-radius: 2px; }
 
-#list_testdata .list_testdata_content {
-  min-height: 300px; }
+#list_testdata {
+  width: 540px; }
+  #list_testdata .list_testdata_content {
+    min-height: 300px; }
 
 #list_testdata ol {
   min-height: 250px;
@@ -84,5 +86,14 @@
   font-size: 18px;
   margin-bottom: 20px;
   margin-top: 20px; }
+
+.list_testdata_div {
+  display: inline-block; }
+  .list_testdata_div input {
+    float: right;
+    margin-top: 30px;
+    margin-left: 10px; }
+  .list_testdata_div li {
+    float: left; }
 
 /*¯\_(ツ)_/¯*/

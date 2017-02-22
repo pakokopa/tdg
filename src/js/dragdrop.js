@@ -17,12 +17,16 @@ $(function() {
         hoverClass: "ui-state-hover",
         accept: ":not(.ui-sortable-helper)",
         drop: function(event, ui) {
+            var li_val = ui.draggable.text();
             $(this).find(".placeholder").remove();
+            $(this).append('<div class="list_testdata_div"><input type="text" value="Bezeichnung"><li>' + li_val + '</li></div>');
+            /*
             $("<li></li>").text(ui.draggable.text()).appendTo(this);
-            //$("<input type="text" name="test">").appendTo(this);
+            $(this).append('<input type="text" value="bla">');
+            */
         }
     }).sortable({
-        items: "li:not(.placeholder)",
+        items: "div:not(.placeholder)",
         sort: function() {
             $(this).removeClass("ui-state-default");
             $("ul, li").disableSelection();
@@ -32,7 +36,7 @@ $(function() {
 
     // Löschen der Module
     $("#trash").droppable({
-        accept: "#list_testdata li",
+        accept: "#list_testdata div",
         hoverClass: 'hovered',
         drop: function(event, ui) {
             entfernen(ui.draggable);
