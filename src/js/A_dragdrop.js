@@ -39,13 +39,13 @@ $(function() {
         accept: "#list_testdata div",
         hoverClass: 'hovered',
         drop: function(event, ui) {
-            entfernen(ui.draggable);
+            removeelement(ui.draggable);
         }
     });
 });
 
 
 // Funktion Löschen
-function entfernen($item) {
+function removeelement($item) {
     $item.remove();
 }

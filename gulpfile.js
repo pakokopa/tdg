@@ -37,6 +37,7 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest('src/fonts'))
 })
 
+
 // Compile Our Sass
 gulp.task('sass', function() {
     return gulp.src('src/scss/*.scss')
@@ -49,7 +50,7 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/buildjs'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
@@ -64,7 +65,7 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'html']);
+gulp.task('default', ['sass', 'scripts', 'html']);
 
 
 
