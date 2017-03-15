@@ -56,10 +56,12 @@ var InputModule = function(title, type, value) {
 
     var that = this;
 
+// Default Attributs
     that.title = title;
     that.type = type;
     that.returnvalue = value;
 
+// Default generate_modul function
     that.generate_modul = function() {
         console.log("Hello! I'm Default!");
     }
@@ -67,69 +69,157 @@ var InputModule = function(title, type, value) {
 
 'use strict';
 
-var IntModule = function(title, length) {
+var IntModule = function(title, min, max, length) {
 
     var that = new InputModule();
     that.title = title;
     that.type = "Int";
+    that.min = min;
+    that.max = max;
     that.length = length;
-    var max;
-    var min;
-    var value;
 
 
-    if (that.length == 1 || that.length == 0) {
-        min = 7;
-        max = 9;
-    } else {
-        var min_string = "1";
-        var max_string = "9";
-        for (i = 0; i < that.length - 1; i++) {
-            min_string += "0";
-            max_string += "9";
+    // Adds 0 at the beginning
+    that.check_length = function(int) {
+        int_string = int.toString();
+        if (that.length != undefined) {
+
+            int_length = int_string.length;
+
+
+            for (i = int_length; i < that.length; i++) {
+                int_string = "0" + int_string;
+                console.log("test");
+            }
+
         }
-        min = parseInt(min_string);
-        max = parseInt(max_string);
+        return int_string;
     }
 
+    // generate_modul function
     that.generate_modul = function() {
-        value = Math.round(Math.random() * (max - min)) + min;
-
-/* ----------------console.log --------------------*/
+        var random = Math.round(Math.random() * (that.max - that.min)) + that.min;
+        var value = that.check_length(random);
         console.log(value);
     }
 
-
-
-    jQuery.extend(true, this, that);
+    $.extend(true, this, that);
 }
 
+'use strict';
 
+var ApiModule = function(title, field, region, gender) {
+
+    var that = new InputModule();
+    that.title = title;
+    that.type = "API";
+    that.field = field;
+    that.region = typeof region !== 'undefined' ? "region=" + region : "";
+    that.parameter_1 = typeof region !== 'undefined' ? "?" : "";
+    that.gender = typeof gender !== 'undefined' ? "gender=" + gender : "";
+    that.parameter_2 = typeof gender !== 'undefined' ? "&" : "";
+
+    that.generate_modul = function() {
+
+        //API
+        $.ajax({
+            type: 'GET',
+            url: 'https://uinames.com/api/' + that.parameter_1 + that.region + that.parameter_2 + that.gender,
+            success: function(data) {
+                console.log(data[that.field]);
+            }
+
+        });
+    }
+
+    $.extend(true, this, that);
+}
+
+'use strict';
+
+var CsvModule = function(title, filepath) {
+
+    var that = new InputModule();
+    that.title = title;
+    that.filepath = filepath;
+
+
+
+            function getRandomLine(){
+              fs.readFile('C:\Users\pako\Desktop\penguin_species.csv', function(err, data){
+                if(err) throw err;
+                var lines = data.split('\n');
+                console.log(lines[Math.floor(Math.random()*lines.length)]);
+             })
+            }
+    }
 
 'use strict';
 
 var BooleanModule = function(title, x, y) {
 
     var that = new InputModule();
-    var value;
     that.title = title;
-    that.x = x;
-    that.y = y;
+    that.type = "Boolean"
+    that.x = typeof x !== 'undefined' ? x : true;
+    that.y = typeof y !== 'undefined' ? y : false;
 
+    // generate_modul function
     that.generate_modul = function() {
-        if(Math.random() >= 0.5){
+        var value;
+        if (Math.random() >= 0.5) {
             value = that.x;
-        }else{
+        } else {
             value = that.y;
         }
         console.log(value);
     }
-    jQuery.extend(true, this, that);
+    $.extend(true, this, that);
 }
 
+/********************************************************************************************************************************************************************
+----------------------------------------------------------------------------------MODULE OVERVIEW--------------------------------------------------------------------
+INT MODULE
+The Int Module generate random integer with a specail length. It expect three parameter.
+1. Title of the module      | expected
+2. Minimum                  | expected
+3. Maximum                  | expected
+Example: IntModule("Geburtstag", 1, 28)
+
+BOOLEAN MODULE
+The Boolean Module generate choose a random value of two given values. It expect at least one parameter.
+1. Title of the module      | expected
+2. First value              | optional (default: true)
+3. Second value             | optional (default: false)
+Example: BooleanModule("Anrede","Frau", "Herr")
+
+API MODULE
+The API Module generate a user with the following Attributs : name, surname, region and gender. It expect at least two parameter.
+1. Title of the Module      | expected
+2. Attributs                | expected
+3. Filter region            | optional (default : all)
+4. Filter gender            | optional (default : all)
+Example : ApiModule("WeiblicheVornamenAusDeutschland", "name", "germany", "female")
+**********************************************************************************************************************************************************************/
+
+
 'use strict';
-var objBC = new IntModule("bla", 4);
+
+// INT MODULE
+var objBC = new IntModule("Alter", 15, 54);
 objBC.generate_modul();
 
-var objBF = new BooleanModule("blanr2", "frau", "herr");
+
+// BOOLEAN MODULE
+var objBF = new BooleanModule("Anrede", "ja", "nein");
 objBF.generate_modul();
+
+
+// API MODULE
+var objZZ = new ApiModule("weiblicherVorname", "name", "germany", "female");
+objZZ.generate_modul();
+
+
+// CSV MODULE
+var objXX = new CsvModule("test","bla");
+objXX.getRandomLine();

@@ -3,18 +3,20 @@
 var BooleanModule = function(title, x, y) {
 
     var that = new InputModule();
-    var value;
     that.title = title;
-    that.x = x;
-    that.y = y;
+    that.type = "Boolean"
+    that.x = typeof x !== 'undefined' ? x : true;
+    that.y = typeof y !== 'undefined' ? y : false;
 
+    // generate_modul function
     that.generate_modul = function() {
-        if(Math.random() >= 0.5){
+        var value;
+        if (Math.random() >= 0.5) {
             value = that.x;
-        }else{
+        } else {
             value = that.y;
         }
         console.log(value);
     }
-    jQuery.extend(true, this, that);
+    $.extend(true, this, that);
 }

@@ -1,38 +1,38 @@
 'use strict';
 
-var IntModule = function(title, length) {
+var IntModule = function(title, min, max, length) {
 
     var that = new InputModule();
     that.title = title;
     that.type = "Int";
+    that.min = min;
+    that.max = max;
     that.length = length;
-    var max;
-    var min;
-    var value;
 
 
-    if (that.length == 1 || that.length == 0) {
-        min = 7;
-        max = 9;
-    } else {
-        var min_string = "1";
-        var max_string = "9";
-        for (i = 0; i < that.length - 1; i++) {
-            min_string += "0";
-            max_string += "9";
+    // Adds 0 at the beginning
+    that.check_length = function(int) {
+        int_string = int.toString();
+        if (that.length != undefined) {
+
+            int_length = int_string.length;
+
+
+            for (i = int_length; i < that.length; i++) {
+                int_string = "0" + int_string;
+                console.log("test");
+            }
+
         }
-        min = parseInt(min_string);
-        max = parseInt(max_string);
+        return int_string;
     }
 
+    // generate_modul function
     that.generate_modul = function() {
-        value = Math.round(Math.random() * (max - min)) + min;
-
-/* ----------------console.log --------------------*/
+        var random = Math.round(Math.random() * (that.max - that.min)) + that.min;
+        var value = that.check_length(random);
         console.log(value);
     }
 
-
-
-    jQuery.extend(true, this, that);
+    $.extend(true, this, that);
 }
