@@ -21,6 +21,12 @@ The API Module generate a user with the following Attributs : name, surname, reg
 3. Filter region            | optional (default : all)
 4. Filter gender            | optional (default : all)
 Example : ApiModule("WeiblicheVornamenAusDeutschland", "name", "germany", "female")
+
+FILE MODULE
+The File Module generate a random value of a given local file. It expect two parameter.
+1. Title of the Module      | expected
+2. filename                 | expected
+Example: FileModule("PinguinArten", "penguin_species.txt")
 **********************************************************************************************************************************************************************/
 
 
@@ -28,19 +34,25 @@ Example : ApiModule("WeiblicheVornamenAusDeutschland", "name", "germany", "femal
 
 // INT MODULE
 var objBC = new IntModule("Alter", 15, 54);
-objBC.generate_modul();
+//console.log(objBC.generate_modul());
 
 
 // BOOLEAN MODULE
 var objBF = new BooleanModule("Anrede", "ja", "nein");
-objBF.generate_modul();
+//console.log(objBF.generate_modul());
 
 
 // API MODULE
-var objZZ = new ApiModule("weiblicherVorname", "name", "germany", "female");
-objZZ.generate_modul();
+var objBD = new ApiModule("weiblicherVorname", "name", "germany", "female");
+//console.log(objBD.generate_modul());
 
 
-// CSV MODULE
-var objXX = new CsvModule("test","bla");
-objXX.getRandomLine();
+// FILE MODULE
+var objBE = new FileModule("PinguinArten","penguin_species.txt");
+//console.log(objBE.generate_modul());
+
+
+
+$.each(InputModule.instances, function(){
+    console.log(this.generate_modul());
+});

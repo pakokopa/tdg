@@ -10,13 +10,13 @@ var BooleanModule = function(title, x, y) {
 
     // generate_modul function
     that.generate_modul = function() {
-        var value;
+            var value;
         if (Math.random() >= 0.5) {
             value = that.x;
         } else {
             value = that.y;
         }
-        console.log(value);
+        return value;
     }
     $.extend(true, this, that);
 }

@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 var InputModule = function(title, type, value) {
 
     var that = this;
@@ -11,6 +13,11 @@ var InputModule = function(title, type, value) {
 
 // Default generate_modul function
     that.generate_modul = function() {
-        console.log("Hello! I'm Default!");
+        //console.log("Hello! I'm Default!");
     }
+
+    InputModule.instances.push(this);
+
 }
+
+InputModule.instances = [];

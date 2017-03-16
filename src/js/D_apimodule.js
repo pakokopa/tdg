@@ -17,11 +17,12 @@ var ApiModule = function(title, field, region, gender) {
         $.ajax({
             type: 'GET',
             url: 'https://uinames.com/api/' + that.parameter_1 + that.region + that.parameter_2 + that.gender,
+            async: false,
             success: function(data) {
-                console.log(data[that.field]);
+                that.value = data[that.field];
             }
-
         });
+        return that.value;
     }
 
     $.extend(true, this, that);

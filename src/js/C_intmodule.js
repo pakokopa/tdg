@@ -31,7 +31,7 @@ var IntModule = function(title, min, max, length) {
     that.generate_modul = function() {
         var random = Math.round(Math.random() * (that.max - that.min)) + that.min;
         var value = that.check_length(random);
-        console.log(value);
+        return value;
     }
 
     $.extend(true, this, that);

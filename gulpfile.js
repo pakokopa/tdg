@@ -47,6 +47,31 @@ gulp.task('sass', function() {
 });
 
 // Concatenate & Uglify JS
+ /*  // Core
+gulp.task('scripts_core', function() {
+    return gulp.src('src/js/core/*.js')
+        .pipe(concat('core.js'))
+        .pipe(gulp.dest('dist/buildjs'))
+        .pipe(rename('core.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'))
+
+});
+   //JQuery
+gulp.task('scripts_jquery', function() {
+    return gulp.src('src/js/jquery/*.js')
+        .pipe(concat('jquery.js'))
+        .pipe(gulp.dest('dist/buildjs'))
+        .pipe(rename('jquery.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'))
+
+});
+
+   //all
+gulp.task('scripts', ['scripts_jquery', 'scripts_core']);
+*/
+
 gulp.task('scripts', function() {
     return gulp.src('src/js/*.js')
         .pipe(concat('all.js'))
@@ -54,7 +79,7 @@ gulp.task('scripts', function() {
         .pipe(rename('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
-        //.pipe(browserSync.stream());
+
 });
 
 // Watch Files For Changes
